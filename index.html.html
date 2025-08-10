@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Academic Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 20%, #2a5298 80%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            border: 3px solid rgba(255,255,255,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .header-text p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            background: #2a5298;
+            color: white;
+        }
+
+        main {
+            padding: 2rem 0;
+        }
+
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2a5298;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #1e3c72;
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .research-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #2a5298;
+        }
+
+        .publication-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+
+        .experience-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 4px solid #dc3545;
+        }
+
+        .skill-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2a5298;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #1e3c72;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .research-grid, .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-image">
+                    <img src="C:\Users\sajjad\OneDrive\Desktop\Your-photo.jpeg">
+                </div>
+                <div class="header-text">
+                    <h1>Sajjad Dargahi</h1>
+                    <p>Aspiring PhD Student in Computational Materials Science/Mechanical Engineering</p>
+                    <p>Master's Student at University of Mazandaran</p>
+ <div class="contact-links">
+           
+                <a href="mailto:s.dargahi03@umail.umz.ac.ir" class="btn">📧 Email</a>
+                <a href="mailto:sajjaddargahi@outlook.com" class="btn">📧 Alternative Email</a>
+                <a href="https://www.linkedin.com/in/sajjaddargahi/" target="_blank" class="btn">🔗 LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=YASBEAUAAAAJ&hl=en" target="_blank" class="btn">📚 Google Scholar</a>
+                <a href="https://github.com/sajjaddargahi" target="_blank" class="btn">💻 GitHub</a>
+
+            </div>
+
+              
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my academic profile. I am a passionate researcher in Computational Materials Science with a strong interest in nanomaterials and machine learning applications. I am currently pursuing my Master's degree at Mazandaran University. I am actively seeking PhD opportunities to advance my research in predicting the mechanical properties of advanced materials using atomic simulations and deep learning.</p>
+            <p>My research interests lie at the intersection of Artificial Intelligence (AI) and Materials Science, where I focus on developing innovative approaches to modeling and predicting the mechanical behavior of nanomaterials like graphene and carbon nanotubes. I am particularly drawn to molecular dynamics simulations and deep learning models and their applications in understanding fracture properties and atomic-scale phenomena.</p>
+            <p>I am committed to conducting impactful research that addresses real-world challenges and contributes to the advancement of knowledge in my field. I am eager to collaborate with leading researchers and contribute to groundbreaking discoveries.</p>
+        </section>
+
+        <section id="research">
+            <h2>Research Interests</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <h3>Primary Research Area</h3>
+                    <p>My primary research area is the investigation of the mechanical properties of nanomaterials, specifically graphene and carbon nanotubes, using atomic-scale modeling and deep learning. This field is significant because nanomaterials possess unique mechanical, electrical, and thermal properties that make them critical for applications in nanotechnology, energy storage, and advanced composites. Understanding their behavior at the atomic level is essential for designing materials with tailored properties for real-world applications. I am particularly compelled by the challenge of predicting complex mechanical behaviors, such as fracture and deformation, under varying conditions. My preliminary work includes a molecular dynamics study on the mechanical and fracture properties of carbon polycrystalline graphene and nanotubes, published as a first-author article titled Molecular Dynamics Studies on the Mechanical and Fracture Properties of Carbon Polycrystalline Graphene and Nanotube. This work has laid the foundation for developing predictive models that combine atomic simulations with machine learning to enhance material design efficiency.</p>
+                </div>
+                <div class="research-card">
+                    <h3>Secondary Research Focus</h3>
+                    <p>My secondary research focus is the application of artificial intelligence (AI), particularly deep learning, to predict material properties and optimize material discovery in computational materials science. This area connects to my primary research by providing a data-driven approach to complement and accelerate atomic modeling. By training deep learning models on simulation data, I aim to predict mechanical properties with high accuracy, reducing the computational cost of traditional methods like molecular dynamics. My unique perspective lies in integrating domain-specific knowledge from materials science with advanced AI techniques, enabling the development of robust predictive models. This synergy allows me to explore complex material behaviors that are difficult to capture through simulations alone, such as defect propagation or multi-scale interactions in nanomaterials.</p>
+                </div>
+                <div class="research-card">
+                    <h3>Interdisciplinary Connections</h3>
+                    <p>My research interests span computational materials science, artificial intelligence, and computational physics, fostering opportunities for innovative cross-disciplinary work. By combining molecular dynamics simulations with deep learning, I aim to bridge the gap between physics-based modeling and data-driven predictions. This interdisciplinary approach enables the exploration of material properties at multiple scales, from atomic to macroscopic levels. I am particularly interested in leveraging machine learning techniques, such as graph neural networks, to model atomic interactions and predict material behavior under diverse conditions. Additionally, my interest in computational biology allows me to explore parallels between material systems and biological structures, such as protein folding or biomaterial design, potentially leading to advancements in bioinspired materials. This cross-disciplinary perspective enhances the potential for discovering novel materials with applications in both engineering and biomedical fields.</p>
+                </div>
+                <div class="research-card">
+                    <h3>Future Directions</h3>
+                    <p>My long-term research vision is to develop a comprehensive framework for predicting and designing the mechanical properties of nanomaterials using a hybrid approach that integrates atomic-scale simulations with advanced machine learning models. In the near term, I plan to expand my work on graphene and carbon nanotubes by investigating their behavior under extreme conditions, such as high temperatures or radiation, using multi-scale modeling. I also aim to develop generalizable deep learning models that can predict the properties of a wide range of nanomaterials, accelerating material discovery for applications in energy, aerospace, and biomedicine. My ultimate goal is to contribute to the development of sustainable, high-performance materials that address global challenges, such as energy efficiency and environmental resilience. By fostering collaborations across materials science, AI, and computational biology, I hope to make impactful contributions to the advancement of next-generation materials and technologies.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications & Research Output</h2>
+            
+  <h3>Peer-Reviewed Publications</h3>
+            <div class="publication-item">
+  <b>Validation of experimental results for polyhedral oligomeric silsesquioxane, carbon nanotube and functionalized carbon nanotube/polymer nanocomposites through density functional theory study</b><br>
+                Authors: M Ramzali, MG Ahangari, MK Arabi, S Dargahi<br>
+                <i>Materials Today Communications</i>, 41, 110600, 2024<br>
+                Cited by: 2<br>
+                Description: This study validates experimental results for polymer nanocomposites using density functional theory, focusing on the mechanical and thermal properties of POSS and CNTs. My contribution included computational modeling and data analysis, supporting the development of advanced composite materials.<br>
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S2352492824025819?via%3Dihub" class="btn">View Paper</a>
+            </li>
+</div>
+            <h3>Working Papers & Manuscripts</h3>
+            <div class="publication-item">
+                <strong>Molecular Dynamics Studies on the Mechanical and Fracture Properties of Carbon Polycrystalline Graphene and Nanotube</strong><br>
+                <em>Authors: Sajjad Dargahi, Morteza Ghorbanzadeh Ahangari, Mostafa Khosroupour Arabi, Mostafa Fathalian, Eligiusz Postek</em><br>
+               <em>Status: Under Review / In Preparation</em><br>
+                <p>Description: This first-author study explores the mechanical and fracture properties of carbon-based nanomaterials using molecular dynamics simulations. My contributions included designing simulations, analyzing fracture behavior, and developing predictive models, laying the groundwork for AI-driven material design.</p>
+                <a href="#" class="btn">View Paper</a>
+            </div>
+
+
+
+            <div class="publication-item">
+
+                <b>Probing Methanol Adsorption on Two-Dimensional Nanoparticles: A Comprehensive Density Functional Theory Study</b><br>
+                Authors: N Anvari, MGG Ahangari, M Jahanshahi, S Dargahi<br>
+<em>Status: Under Review / In Preparation</em><br>
+                <i>Preprints</i>, 2024<br>
+                Cited by: 1<br>
+                Description: This work investigates methanol adsorption on 2D nanomaterials (e.g., graphene, BN, AlN) using DFT, contributing to fuel cell technology. I conducted simulations and analyzed adsorption energies, enhancing the understanding of nanomaterial applications in energy production.<br>
+  
+                <a href="#" class="btn">View Paper</a>
+            </li>
+              
+              
+            </div>
+
+            <h3>Thesis & Major Projects</h3>
+            <div class="publication-item">
+                
+                <b>Investigation of the Mechanical Properties of Graphene using Atomic Modeling and Deep Learning Model</b><br>
+                <em>Advisor: Dr. Morteza Ghorbanzadeh Ahangari, University of Mazandaran, Expected 2025 (summer)</em><br>
+                Description: My Master’s thesis focuses on predicting the mechanical properties of graphene using molecular dynamics simulations and deep learning models. The methodology integrates LAMMPS for atomic modeling and Python-based Deep Neural Networks to predict Mechanical Behavior such as Young's Modulus. Key findings include improved accuracy in property prediction, contributing to the design of high-performance nanomaterials for energy and composite applications.<br>
+                <a href="#" class="btn">View Thesis</a>
+           
+       
+                
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Research & Professional Experience</h2>
+             <div class="experience-item">
+                <h3>Graduate Research Mentor</h3>
+                <strong>[Dr. Morteza Ghorbanzadeh Ahangari Lab], [University of Mazandaran] | [Feb 2025] - Present</strong>
+                <p>As a Graduate Research Mentor, I guide a master’s student in her research on the mechanical properties of noncarbon nanosheets, enhancing my leadership and communication skills.</p>
+                <ul>
+                    <li>Mentoring Thesis Research: Guide a master’s student in designing and executing research on noncarbon nanosheets, advising on computational methodologies.</li>
+                    <li>Teaching laboratory techniques and research methodologies: Train the student in molecular dynamics simulations and data analysis, ensuring rigorous results.</li>
+                    <li>Data Analysis and Interpretation: Collaborate on analyzing research data, fostering critical thinking in nanotechnology projects.</li>
+<li>Collaborative Research: Work on innovative projects, contributing to the lab’s mission in advancing materials science.</li>
+                        <p>I am grateful for this opportunity to contribute to our scientific community and to support the development of groundbreaking research.</p>
+                </ul>
+            </div>
+
+
+            <div class="experience-item">
+                <h3>Research Assistant</h3>
+                <strong>[Dr. Morteza Ghorbanzadeh Ahangari Lab], [University of Mazandaran] | [Oct 2023] - Present</strong>
+                <p>I conduct advanced research in computational materials science, focusing on nanomaterials and their applications in energy and composite technologies.</p>
+                <ul>
+                    <li>Investigation of Methanol Adsorption on 2D Nanomaterials: Studied methanol adsorption on graphene, BN, and AlN using molecular dynamics, advancing fuel cell technology.</li>
+                    <li>Functionalization of Nanomaterials: Investigated CNT and POSS functionalization for polymer composites, enhancing mechanical and thermal properties.</li>
+                    <li>Key Contribution in Scholarly Publications: Co-authored a first-author article on graphene and nanotube properties, demonstrating research leadership.</li>
+                        <p>Through these projects, I have developed expertise in molecular dynamics simulations, data analysis, and computational modeling, while fostering interdisciplinary skills at the intersection of materials science and computational methods. My role has strengthened my ability to collaborate with research teams and translate complex concepts into practical applications, preparing me for advanced research in a PhD program.</p>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Teaching Assistant</h3>
+                <strong>[Supervised by Dr. Morteza Ghorbanzadeh Ahangari and Dr. Naser Kordani], [University of Mazandaran] | [Feb 2024] - [Jun 2024]</strong>
+                <p>Supported undergraduate students in mechanical engineering courses, integrating computational tools into teaching.</p>
+<li>Courses Assisted: Statics, Strength of Materials / Mechanics of Materials, Mechanical Engineering Design (Design of Machine Components), and CAD/CAM Software (Solidworks|CATIA|DEFORM-3D)
+<li>Received positive feedback for clear explanations and innovative teaching methods.
+           </div>
+
+            <div class="experience-item">
+                <h3>Internship/Industry Experience</h3>
+                <strong>[SAIPA, Tehran, Iran] | [Oct 2021] - [Des 2021]</strong>
+                <p>Contributed to the mold-making process for the SAIPA Quick, Iran’s best-selling car in 2021.</p>
+<li>Mold-Making and Machine Operation: Operated radial drill press machines for precise mold production.
+<li>Quality Control: Conducted inspections to ensure mold accuracy and reliability.
+<li>Mold Design: Learned to design molds, integrating material and manufacturing knowledge.
+<li>Problem-Solving: Addressed machining errors, enhancing adaptability and technical skills.
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li>LAMMPS (Proficient)</li>
+                        <li>Python (Seasoned)</li>
+                        <li>MATLAB (Skillful)</li>
+                        <li>Linux (Intermediate)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Research Methods</h3>
+                    <ul class="skill-list">
+                        <li>Statistical Analysis</li>
+                        <li>Data Mining</li>
+                        <li>Experimental Design</li>
+                        <li>Literature Review</li>
+                        <li>Qualitative Research</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Software & Tools</h3>
+                    <ul class="skill-list">
+                        <li>Statistical Software (OriginLab, Excel)</li>
+                        <li>Data Visualization (VMD, OVITO)</li>
+                        <li>Reference Management (EndNote, Zotero, Mendeley)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Laboratory Skills</h3>
+                    <ul class="skill-list">
+                        <li>Molecular Dynamics Simulations</li>
+                        <li>Data Analysis </li>
+                        <li>Equipment operation</li>
+                        <li>Data collection protocols</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>I am actively seeking PhD opportunities and would welcome the chance to discuss potential research collaborations or answer any questions about my work. Please feel free to reach out through any of the following channels:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div>
+                    <h3>Email</h3>
+ <a href="mailto:s.dargahi03@umail.umz.ac.ir">s.dargahi03@umail.umz.ac.ir</a>  <a href="mailto:sajjaddargahi@outlook.com">sajjaddargahi@outlook.com</a> 
+                    
+                    <p>Response time: Within 24 hours</p>
+                    <p>
+                </div>
+                <div>
+                    <h3>Phone</h3>
+                    <p>Phone</b>: +989396793333 
+                    <p>(Available weekdays, 9 AM - 9 PM)</p>
+        
+                </div>
+                <div>
+                    <h3>Research Interests</h3>
+                    <p>Open to discussing:</p>
+                    <ul>
+                        <li>PhD opportunities</li>
+                        <li>Research collaborations</li>
+                        <li>Conference presentations</li>
+                        <li>Academic networking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+               
+                <a href="#" class="btn">Download CV</a>
+                <a href="#" class="btn">Schedule Meeting</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sajjad Dargahi. All rights reserved. | Designed for academic purposes</p>
+            <p>Last updated: [Date] | Available for PhD opportunities starting Fall 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active navigation link based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let currentSection = '';
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 150 && rect.bottom >= 150) {
+                    currentSection = section.id;
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Add fade-in animation for sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
