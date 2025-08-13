@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajjad Dargahi - Curriculum Vitae</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #000;
+            background: #fff;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.75in;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20pt;
+            padding-bottom: 15pt;
+            border-bottom: 2pt solid #2a5298;
+        }
+
+        .name {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #2a5298;
+            margin-bottom: 8pt;
+        }
+
+        .title {
+            font-size: 14pt;
+            color: #555;
+            margin-bottom: 12pt;
+            font-style: italic;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10pt;
+            text-align: left;
+            max-width: 500pt;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            font-size: 10pt;
+        }
+
+        .section {
+            margin: 18pt 0;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #2a5298;
+            text-transform: uppercase;
+            letter-spacing: 1pt;
+            margin-bottom: 8pt;
+            padding-bottom: 3pt;
+            border-bottom: 1pt solid #2a5298;
+        }
+
+        .entry {
+            margin-bottom: 12pt;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4pt;
+        }
+
+        .entry-title {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .entry-date {
+            font-style: italic;
+            color: #666;
+            font-size: 10pt;
+        }
+
+        .entry-subtitle {
+            font-style: italic;
+            color: #333;
+            margin-bottom: 4pt;
+        }
+
+        .entry-description {
+            margin-left: 0;
+            text-align: justify;
+        }
+
+        .publication {
+            margin-bottom: 10pt;
+            text-align: justify;
+        }
+
+        .publication-title {
+            font-weight: bold;
+        }
+
+        .publication-authors {
+            font-style: italic;
+        }
+
+        .publication-venue {
+            color: #333;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15pt;
+        }
+
+        .skill-category {
+            margin-bottom: 10pt;
+        }
+
+        .skill-title {
+            font-weight: bold;
+            margin-bottom: 4pt;
+            color: #2a5298;
+        }
+
+        .skill-list {
+            font-size: 10pt;
+        }
+
+        ul {
+            margin-left: 15pt;
+            margin-bottom: 8pt;
+        }
+
+        li {
+            margin-bottom: 2pt;
+        }
+
+        .research-interests {
+            text-align: justify;
+            margin-bottom: 8pt;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0.5in;
+                font-size: 10pt;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                margin: 15pt 0;
+            }
+            
+            .entry {
+                page-break-inside: avoid;
+            }
+        }
+
+        .honor-entry {
+            margin-bottom: 6pt;
+        }
+
+        .conference-entry {
+            margin-bottom: 8pt;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20pt;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="name">SAJJAD DARGAHI</div>
+        <div class="title">Computational Materials Scientist</div>
+        <div class="contact-grid">
+            <div class="contact-item">
+
+                <strong><a href="mailto:s.dargahi03@umail.umz.ac.ir" target="_blank" class="btn">Email</a>:</strong> s.dargahi03@umail.umz.ac.ir
+            </div>
+            <div class="contact-item">
+                <strong>Phone:</strong> +98 939 679 3333
+            </div>
+            <div class="contact-item">
+                <strong><a href="mailto:sajjaddargahi@outlook.com" target="_blank" class="btn">Alternative Email</a>:</strong> sajjaddargahi@outlook.com
+            </div>
+            <div class="contact-item">
+                <strong><a href="https://www.linkedin.com/in/sajjaddargahi/" target="_blank" class="btn">LinkedIn</a>:</strong> linkedin.com/in/sajjaddargahi
+            </div>
+            <div class="contact-item">
+                <strong><a href="https://github.com/Sajjad-Dargahi" target="_blank" class="btn">GitHub</a>:</strong> github.com/sajjaddargahi
+            </div>
+            <div class="contact-item">
+                <strong> <a href="https://scholar.google.com/citations?user=YASBEAUAAAAJ&hl=en" target="_blank" class="btn">Google Scholar</a>:</strong> https://scholar.google.com/citations?user=YASBEAUAAAAJ&hl=en
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">Master of Science in Mechanical Engineering</div>
+                <div class="entry-date">2023 – 2025 (Expected)</div>
+            </div>
+            <div class="entry-subtitle">University of Mazandaran, Babolsar, Iran</div>
+            <div class="entry-description">
+                <strong>Thesis:</strong> "Investigation of the Mechanical Properties of Graphene using Atomic Modeling and Deep Learning Model"<br>
+                <strong>Advisor:</strong> Dr. Morteza Ghorbanzadeh Ahangari<br>
+                <strong>Focus:</strong> Computational Materials Science, Molecular Dynamics Simulations, Machine Learning Applications in Materials Science
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">Bachelor of Science in Mechanical Engineering</div>
+                <div class="entry-date">2019 – 2023</div>
+            </div>
+            <div class="entry-subtitle">University of Mazandaran, Babolsar, Iran</div>
+            <div class="entry-description">
+                <strong>Relevant Coursework:</strong> Materials Science, Computational Methods, Mechanics of Materials, Thermodynamics, Heat Transfer, Fluid Mechanics
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Research Interests</h2>
+        <div class="research-interests">
+            <strong>Primary:</strong> Computational materials science with focus on nanomaterials (graphene, carbon nanotubes); molecular dynamics simulations; mechanical property prediction using machine learning and deep learning models; atomic-scale modeling of fracture and deformation mechanisms.
+        </div>
+        <div class="research-interests">
+            <strong>Secondary:</strong> Artificial intelligence applications in materials discovery; multi-scale modeling; material property optimization; density functional theory; computational physics; interdisciplinary connections between AI and materials science.
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Publications</h2>
+        
+        <h3 style="font-weight: bold; margin: 12pt 0 8pt 0; color: #333;">Peer-Reviewed Articles</h3>
+        
+        <div class="publication">
+            <span class="publication-title">Validation of experimental results for polyhedral oligomeric silsesquioxane, carbon nanotube and functionalized carbon nanotube/polymer nanocomposites through density functional theory study</span><br>
+            <span class="publication-authors">M. Ramzali, M.G. Ahangari, M.K. Arabi, <strong>S. Dargahi</strong></span><br>
+            <span class="publication-venue"><em>Materials Today Communications</em>, 41, 110600 (2024)</span><br>
+            <span style="font-size: 10pt; color: #666;">Cited by 3 | Impact Factor: 3.7</span>
+        </div>
+
+        <h3 style="font-weight: bold; margin: 12pt 0 8pt 0; color: #333;">Manuscripts Under Review/In Preparation</h3>
+        
+        <div class="publication">
+            <span class="publication-title">Molecular Dynamics Studies on the Mechanical and Fracture Properties of Carbon Polycrystalline Graphene and Nanotube</span><br>
+            <span class="publication-authors"><strong>S. Dargahi</strong>, M.G. Ahangari, M.K. Arabi, M. Fathalian, E. Postek</span><br>
+            <span class="publication-venue"><em>Status:</em> Under Review (First Author)</span>
+        </div>
+
+        <div class="publication">
+            <span class="publication-title">Probing Methanol Adsorption on Two-Dimensional Nanoparticles: A Comprehensive Density Functional Theory Study</span><br>
+            <span class="publication-authors">N. Anvari, M.G. Ahangari, M. Jahanshahi, <strong>S. Dargahi</strong></span><br>
+            <span class="publication-venue"><em>Preprints</em> (2024) | <em>Status:</em> Under Review</span><br>
+            <span style="font-size: 10pt; color: #666;">Cited by 1</span>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Research Experience</h2>
+        
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">Graduate Research Mentor</div>
+                <div class="entry-date">Feb 2025 – Present</div>
+            </div>
+            <div class="entry-subtitle">University of Mazandaran, Babolsar, Iran</div>
+            <div class="entry-description">
+                Supervise master's student research on mechanical properties of non-carbon nanosheets. Responsibilities include guiding thesis research design, teaching molecular dynamics simulation techniques, and collaborative data analysis and interpretation.
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">Research Assistant</div>
+                <div class="entry-date">Oct 2023 – Present</div>
+            </div>
+            <div class="entry-subtitle">Dr. Morteza Ghorbanzadeh Ahangari Lab, University of Mazandaran</div>
+            <div class="entry-description">
+                Conduct advanced research in computational materials science focusing on nanomaterials and their applications in energy and composite technologies. Key projects include investigation of methanol adsorption on 2D nanomaterials using molecular dynamics, functionalization of CNTs and POSS for polymer composites, and development of predictive models for mechanical properties.
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Teaching Experience</h2>
+        
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">Teaching Assistant</div>
+                <div class="entry-date">Feb 2024 – Jun 2024</div>
+            </div>
+            <div class="entry-subtitle">University of Mazandaran | Supervisors: Dr. M.G. Ahangari, Dr. N. Kordani</div>
+            <div class="entry-description">
+                Supported undergraduate courses in Statics, Strength of Materials/Mechanics of Materials, Mechanical Engineering Design (Design of Machine Components), and CAD/CAM Software (SolidWorks, CATIA, DEFORM-3D). Received positive feedback for clear explanations and innovative teaching methods integrating computational tools.
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">Manufacturing Engineering Intern</div>
+                <div class="entry-date">Oct 2021 – Dec 2021</div>
+            </div>
+            <div class="entry-subtitle">SAIPA Automotive Manufacturing Company, Tehran, Iran</div>
+            <div class="entry-description">
+                Contributed to mold-making process for SAIPA Quick (Iran's best-selling car in 2021). Operated radial drill press machines for precise mold production, conducted quality control inspections, and learned mold design principles integrating material and manufacturing knowledge.
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div>
+                <div class="skill-category">
+                    <div class="skill-title">Computational Software</div>
+                    <div class="skill-list">LAMMPS (Proficient), Python (Advanced), MATLAB (Intermediate), Linux (Intermediate)</div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-title">Visualization & Analysis</div>
+                    <div class="skill-list">VMD, OVITO, OriginLab, Microsoft Excel, Statistical Analysis</div>
+                </div>
+            </div>
+            <div>
+                <div class="skill-category">
+                    <div class="skill-title">Research Methods</div>
+                    <div class="skill-list">Molecular Dynamics Simulations, Density Functional Theory, Machine Learning, Data Mining, Experimental Design</div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-title">Reference Management</div>
+                    <div class="skill-list">EndNote, Zotero, Mendeley, LaTeX</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">CAD/CAM Software Proficiency</h2>
+        <div class="entry-description">
+            <strong>Advanced:</strong> SolidWorks, CATIA<br>
+            <strong>Intermediate:</strong> DEFORM-3D (Metal Forming Simulation)
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Languages</h2>
+        <div class="entry-description">
+            <strong>Persian:</strong> Native<br>
+            <strong>English:</strong> Proficient (Academic and Professional)
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Professional Memberships & Activities</h2>
+        <div class="entry-description">
+            • Active in academic research community with focus on computational materials science<br>
+            • Contributor to interdisciplinary research projects combining AI and materials science<br>
+            • Available for peer review activities in relevant journals
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Career Objectives</h2>
+        <div class="research-interests">
+            Seeking PhD opportunities in Computational Materials Science, Materials Engineering, or related fields with focus on nanomaterials, molecular dynamics simulations, and machine learning applications in materials discovery. Committed to advancing fundamental understanding of material behavior at atomic scales and developing predictive models for next-generation materials.
+        </div>
+    </section>
+
+    <footer style="margin-top: 30pt; padding-top: 15pt; border-top: 1pt solid #ccc; text-align: center; font-size: 9pt; color: #666;">
+        <p>References available upon request | Updated August 2025</p>
+    </footer>
+</body>
+</html>
