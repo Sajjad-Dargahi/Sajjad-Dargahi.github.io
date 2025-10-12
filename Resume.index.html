@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajjad Dargahi - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+            background: #f4f6f9;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .resume-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, yellow 0%, #2a5298 100%);
+            color: white;
+            padding: 50px 60px;
+            position: relative;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header .title {
+            font-size: 22px;
+            color: #a8d8ff;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item::before {
+            content: '●';
+            color: #4CAF50;
+            font-size: 10px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-right: 4px solid #2a5298;
+        }
+
+        .main {
+            padding: 40px 50px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #4CAF50;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar .section-title {
+            color: #2a5298;
+            border-bottom-color: #FF6B6B;
+        }
+
+        .skill-category {
+            margin-bottom: 20px;
+        }
+
+        .skill-category h3 {
+            font-size: 16px;
+            color: #2a5298;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 8px 0 8px 20px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .skill-list li::before {
+            content: '◼';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-size: 10px;
+        }
+
+        .skill-list strong {
+            color: #1e3c72;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #4CAF50;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card h3 {
+            color: #1e3c72;
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .project-card ul {
+            list-style: none;
+        }
+
+        .project-card li {
+            padding: 6px 0 6px 20px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .project-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-size: 14px;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #FF6B6B;
+        }
+
+        .education-item h3 {
+            color: #1e3c72;
+            font-size: 17px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .education-details {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .education-item p, .education-item ul {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #2a5298;
+        }
+
+        .experience-item h3 {
+            color: #1e3c72;
+            font-size: 17px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .experience-item ul {
+            list-style: none;
+        }
+
+        .experience-item li {
+            margin: 6px 0;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .languages {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 2px solid #4CAF50;
+        }
+
+        .languages h3 {
+            color: #2a5298;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .languages p {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .highlight-box p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .portfolio-section {
+            background: #ffffff;
+            padding: 40px;
+            margin-top: 30px;
+        }
+
+        .portfolio-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e3c72;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-content {
+            padding: 20px;
+        }
+
+        .portfolio-content h3 {
+            color: #1e3c72;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .portfolio-content p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .saipa-showcase {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .saipa-showcase h3 {
+            color: #1e3c72;
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .saipa-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .saipa-image img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .saipa-description {
+            grid-column: 1 / -1;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #2a5298;
+        }
+
+        .saipa-description ul {
+            list-style: none;
+        }
+
+        .saipa-description li {
+            padding: 8px 0 8px 20px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .saipa-description li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: #2a5298;
+            font-size: 12px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .portfolio-section, .sidebar, .main {
+                page-break-inside: avoid;
+            }
+            .portfolio-image img, .saipa-image img {
+                max-height: 150px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: none;
+                border-top: 4px solid #2a5298;
+            }
+            .portfolio-grid, .saipa-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Sajjad Dargahi</h1>
+            <div class="title">Mechanical Engineer | Product Designer</div>
+            <div class="contact-info">
+                <div class="contact-item">Tehran, Iran</div>
+                <div class="contact-item"><a href="mailto:sajjaddargahi@outlook.com" target="_blank" class="btn">Email</a></div>
+                <div class="contact-item">+98 939-679-3333</div>
+                <div class="contact-item"><a href="https://www.linkedin.com/in/sajjaddargahi/" target="_blank" class="btn">LinkedIn</a></div>                
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <h2 class="section-title">Skills</h2>
+                <div class="skill-category">
+                    <h3>CAD, CAM, CAE</h3>
+                    <ul class="skill-list">
+                        <li>Proficient in <strong>SolidWorks, CATIA, Inventor</strong> for part design, sheet metal, and molding</li>
+                        <li>Advanced in <strong>AutoCAD and SolidWorks</strong> for 2D engineering drawings</li>
+                        <li>Intermediate in <strong>CATIA (CNC programming)</strong> - G-code development</li>
+                        <li>Intermediate in <strong>Deform3D</strong> for metal forming simulation</li>
+                        <li>Advanced in <strong>Simplify3D</strong> for 3D printing optimization</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Mechanical</h3>
+                    <ul class="skill-list">
+                        <li>3D printing for rapid prototyping</li>
+                        <li>TRIZ principles in 3D modeling</li>
+                        <li>Quality control (QC) inspection and assembly</li>
+                        <li>Operation of manual machines (radial drill)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Software</h3>
+                    <ul class="skill-list">
+                        <li>MATLAB, LAMMPS</li>
+                        <li>Python, Linux</li>
+                    </ul>
+                </div>
+                <div class="languages">
+                    <h3>Languages</h3>
+                    <p>✓ Fluent in English</p>
+                </div>
+                <div class="highlight-box">
+                    <p><strong>Graduated in Top Third</strong><br>Master’s in Mechanical Engineering</p>
+                </div>
+            </div>
+
+            <!-- Main Section -->
+            <div class="main">
+                <h2 class="section-title">Highlighted Projects</h2>
+                <div class="project-card">
+                    <h3>CONCROOK | Convertible Hiking Stick Accessories</h3>
+                    <ul>
+                        <li>Versatile: Converts hiking sticks into essential camping tools</li>
+                        <li>Lightweight design - 60% weight reduction for hikers</li>
+                        <li>Patentable innovation using TRIZ principles</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h3>TRAIL BED | Bicycle Trailer to Bed</h3>
+                    <ul>
+                        <li>Patentable bicycle trailer that converts into a sleeping solution</li>
+                        <li>Innovative mechanical design for outdoor enthusiasts</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h3>Automatic Walnut Cracker</h3>
+                    <ul>
+                        <li>Innovative mechanism for efficient walnut cracking</li>
+                        <li>Demonstrates creative mechanical problem-solving</li>
+                    </ul>
+                </div>
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <h3>Master’s in Mechanical Engineering - Applied Design</h3>
+                    <div class="education-details">University of Mazandaran | Babolsar, Iran | October 2021 - September 2024</div>
+                    <p><strong>Thesis:</strong> "Investigation of Graphene Mechanical Properties Using Atomic Modeling and Deep Learning"</p>
+                    <ul>
+                        <li>Developed LAMMPS simulations for nanomaterial fracture analysis</li>
+                        <li>Designed deep learning models with +95% accuracy in predicting Young’s modulus</li>
+                        <li>Teaching Assistant (TA) and Research Assistant (RA) in 2D materials</li>
+                    </ul>
+                </div>
+                <div class="education-item">
+                    <h3>Bachelor’s in Manufacturing Engineering</h3>
+                    <div class="education-details">Technical College of Islamic Revolution | Tehran, Iran | October 2019 - June 2021</div>
+                    <p><strong>Status:</strong> Top-ranked student</p>
+                </div>
+                <div class="education-item">
+                    <h3>Associate’s in Industrial Design and Drafting</h3>
+                    <div class="education-details">Azad University | Tehran, Iran | October 2017 - June 2019</div>
+                    <p><strong>Status:</strong> Top-ranked student</p>
+                </div>
+                <h2 class="section-title">Work Experience</h2>
+                <div class="experience-item">
+                    <h3>Freelancer | Manufacturing Engineer / Product Designer | January - April 2021</h3>
+                    <ul>
+                        <li>Designed a new moka pot using recycled materials - waste upcycling</li>
+                        <li>Developed tent stakes from scrap aluminum profiles using SolidWorks</li>
+                        <li>End-to-end responsibility: concept to field testing</li>
+                        <li>Focused on cost-effectiveness and reusability</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Intern | SAIPA | Mechanical/Manufacturing Engineer | October - December 2020</h3>
+                    <ul>
+                        <li>Contributed to industrial mold design for SAIPA Quick (Iran’s top-selling car, ranked 45th globally in 2021)</li>
+                        <li>Learned and assisted in designing forming and punching molds for window rails and door components</li>
+                        <li>Operated radial drilling machines</li>
+                        <li>Conducted quality control (QC) and mold testing</li>
+                        <li>Gained expertise in mold design combining technical and creative skills</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Section -->
+        <div class="portfolio-section">
+            <h2 class="portfolio-title">Portfolio and Design Projects</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="11.png" alt="Hiking Stick Accessories">
+                        <img src="0.jfif" alt="Hiking Stick Accessories">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Hiking Stick Accessories</h3>
+                        <p>Innovative multi-functional system converting hiking sticks into 6 different tools. Reduces carrying weight by 60% with smart design.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Product Design</span>
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">Innovation</span>
+                            <span class="tag">TRIZ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="2.jpg" alt="Convertible Bicycle Trailer">
+                        <img src="3.jpg" alt="Convertible Bicycle Trailer">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Convertible Bicycle Trailer</h3>
+                        <p>Bicycle trailer that transforms into a comfortable bed. Innovative mechanical design for long-distance travel and camping.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Mechanical</span>
+                            <span class="tag">Design</span>
+                            <span class="tag">Outdoor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="4.jpeg" alt="Recycled Moka Pot">
+                        <img src="4.5.jpeg" alt="Recycled Moka Pot">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Recycled Moka Pot</h3>
+                        <p>Designed and built a moka pot from recycled materials. Waste upcycling project with a sustainable and economical approach.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Recycling</span>
+                            <span class="tag">Manufacturing</span>
+                            <span class="tag">Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="505.jpg" alt="Aluminum Tent Stakes">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Aluminum Tent Stakes</h3>
+                        <p>Manufactured tent stakes from scrap aluminum profiles. Designed with SolidWorks and fully field-tested.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">Aluminum</span>
+                            <span class="tag">Field Testing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="55.png" alt="Graphene Research">
+                        <img src="30.png" alt="Graphene Research">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Thesis Research - Graphene</h3>
+                        <p>Atomic simulation with LAMMPS and deep learning model with +95% accuracy. Advanced research in 2D materials.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">LAMMPS</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Research</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SAIPA Project Detailed Showcase -->
+            <div class="saipa-showcase">
+                <h3>SAIPA Mold Design Project - Industrial Portfolio</h3>
+                <div class="saipa-grid">
+                    <div class="saipa-image">
+                        <img src="2222.png" alt="Window Rail Punch Mold">
+                        <img src="222.jpg" alt="Window Rail Punch Mold">
+                        <small style="font-size: 12px; margin-top: 10px; display: block; text-align: center;">Contributed to design and manufacturing</small>
+                    </div>
+                    <div class="saipa-image">
+                        <img src="1111.png" alt="Door Component Forming Mold">
+                        <img src="111.jpg" alt="Door Component Forming Mold">
+                        <small style="font-size: 12px; margin-top: 10px; display: block; text-align: center;">Contributed to design and manufacturing</small>
+                    </div>
+                </div>
+                <div class="saipa-description">
+                    <ul>
+                        <li>Learned design and conceptualization for industrial molds</li>
+                        <li>CAD modeling with SolidWorks, CATIA, and AutoCAD for precise 3D models</li>
+                        <li>CAE simulation with Deform3D for material flow and deformation analysis</li>
+                        <li>Assembly and rigorous testing to ensure mold accuracy and quality</li>
+                        <li>Worked on SAIPA Quick (Iran’s top-selling car, ranked 45th globally)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Visualization Section -->
+        <div style="background: #f4f6f9; padding: 40px;">
+            <h2 style="color: #1e3c72; text-align: center; font-size: 28px; margin-bottom: 30px;">Skills Overview</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
+                <div style="background: white; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div style="width: 80px; height: 80px; margin: 0 auto 15px; background: #4CAF50; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold;">95%</div>
+                    <h3 style="color: #1e3c72; margin-bottom: 8px;">CAD Design</h3>
+                    <p style="color: #666; font-size: 13px;">SolidWorks, CATIA, AutoCAD</p>
+                </div>
+                <div style="background: white; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div style="width: 80px; height: 80px; margin: 0 auto 15px; background: #2196F3; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold;">90%</div>
+                    <h3 style="color: #1e3c72; margin-bottom: 8px;">Simulation</h3>
+                    <p style="color: #666; font-size: 13px;">Deform3D, LAMMPS, FEA</p>
+                </div>
+                <div style="background: white; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div style="width: 80px; height: 80px; margin: 0 auto 15px; background: #FF6B6B; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold;">85%</div>
+                    <h3 style="color: #1e3c72; margin-bottom: 8px;">Product Design</h3>
+                    <p style="color: #666; font-size: 13px;">Innovation, Prototyping, Testing</p>
+                </div>
+                <div style="background: white; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div style="width: 80px; height: 80px; margin: 0 auto 15px; background: #9C27B0; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold;">80%</div>
+                    <h3 style="color: #1e3c72; margin-bottom: 8px;">Programming</h3>
+                    <p style="color: #666; font-size: 13px;">Python, MATLAB, Linux</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div style="background: white; padding: 40px;">
+            <h2 style="color: #1e3c72; text-align: center; font-size: 28px; margin-bottom: 30px;">Professional Timeline</h2>
+            <div style="max-width: 800px; margin: 0 auto; position: relative;">
+                <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: #2a5298;"></div>
+                <div style="margin-bottom: 40px; position: relative;">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-left: 55%; box-shadow: 0 3px 10px rgba(0,0,0,0.1); border-left: 4px solid #4CAF50;">
+                        <div style="position: absolute; left: calc(50% - 12px); top: 15px; width: 24px; height: 24px; background: #4CAF50; border-radius: 50%; border: 4px solid white;"></div>
+                        <h3 style="color: #1e3c72; margin-bottom: 6px;">2021 - 2024</h3>
+                        <p style="color: #666; font-size: 14px; font-weight: 600;">Master’s in Mechanical Engineering</p>
+                        <p style="color: #888; font-size: 13px;">University of Mazandaran</p>
+                    </div>
+                </div>
+                <div style="margin-bottom: 40px; position: relative;">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-right: 55%; box-shadow: 0 3px 10px rgba(0,0,0,0.1); border-right: 4px solid #FF6B6B;">
+                        <div style="position: absolute; right: calc(50% - 12px); top: 15px; width: 24px; height: 24px; background: #FF6B6B; border-radius: 50%; border: 4px solid white;"></div>
+                        <h3 style="color: #1e3c72; margin-bottom: 6px;">January - April 2021</h3>
+                        <p style="color: #666; font-size: 14px; font-weight: 600;">Freelancer - Product Designer</p>
+                        <p style="color: #888; font-size: 13px;">Tehran</p>
+                    </div>
+                </div>
+                <div style="margin-bottom: 40px; position: relative;">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-left: 55%; box-shadow: 0 3px 10px rgba(0,0,0,0.1); border-left: 4px solid #2196F3;">
+                        <div style="position: absolute; left: calc(50% - 12px); top: 15px; width: 24px; height: 24px; background: #2196F3; border-radius: 50%; border: 4px solid white;"></div>
+                        <h3 style="color: #1e3c72; margin-bottom: 6px;">October - December 2020</h3>
+                        <p style="color: #666; font-size: 14px; font-weight: 600;">Mechanical Engineer - SAIPA</p>
+                        <p style="color: #888; font-size: 13px;">Tehran</p>
+                    </div>
+                </div>
+                <div style="margin-bottom: 40px; position: relative;">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-right: 55%; box-shadow: 0 3px 10px rgba(0,0,0,0.1); border-right: 4px solid #9C27B0;">
+                        <div style="position: absolute; right: calc(50% - 12px); top: 15px; width: 24px; height: 24px; background: #9C27B0; border-radius: 50%; border: 4px solid white;"></div>
+                        <h3 style="color: #1e3c72; margin-bottom: 6px;">2019 - 2021</h3>
+                        <p style="color: #666; font-size: 14px; font-weight: 600;">Bachelor’s in Manufacturing Engineering</p>
+                        <p style="color: #888; font-size: 13px;">Technical College of Islamic Revolution</p>
+                    </div>
+                </div>
+                <div style="position: relative;">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-left: 55%; box-shadow: 0 3px 10px rgba(0,0,0,0.1); border-left: 4px solid #FF9800;">
+                        <div style="position: absolute; left: calc(50% - 12px); top: 15px; width: 24px; height: 24px; background: #FF9800; border-radius: 50%; border: 4px solid white;"></div>
+                        <h3 style="color: #1e3c72; margin-bottom: 6px;">2017 - 2019</h3>
+                        <p style="color: #666; font-size: 14px; font-weight: 600;">Associate’s in Industrial Design</p>
+                        <p style="color: #888; font-size: 13px;">Azad University</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="background: linear-gradient(135deg, #1e3c72 0%, yellow 100%); color: white; padding: 30px; text-align: center;">
+            <h3 style="font-size: 22px; margin-bottom: 12px;">Ready to Collaborate on Challenging Projects</h3>
+            <p style="font-size: 15px; margin-bottom: 15px; color: #a8d8ff;">Mechanical Design • Product Innovation • Engineering Simulation</p>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <div style="background: rgba(255,255,255,0.1); padding: 10px 20px; border-radius: 6px;">
+                    <strong>Email:</strong> sajjaddargahi@outlook.com
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 10px 20px; border-radius: 6px;">
+                    <strong>Phone:</strong> +98 9396793333
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
